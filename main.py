@@ -1,7 +1,7 @@
 from connection import connection, cursor
 from insertContact import insert
 from searchContact import search
-from sortContact import sortContact
+from sortContact import sort
 from deleteContact import delete
 
 
