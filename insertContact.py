@@ -15,9 +15,12 @@ def insert(connection, cursor):
         query = "INSERT INTO contacts (first_name, last_name, phone_number) VALUES (%s, %s, %s)"
         #List of values enter by the user in the first part of the function
         values = (first_name, last_name, phone_number)
-        #By utilizing the "cursor" module, execute the SQL query with the entered values
+        #By utilizing the "cursor" object, execute the SQL query with the entered values
         cursor.execute(query, values)
         #The commit() method is used to confirm the changes made by the user to the database
         connection.commit()
-        #Display a success message - inform the user about the new entry (row)
-        print(cursor.rowcount, "Record inserted.")
+        #Check if the insertion was successful and inform the user of the outcome
+        if cursor.rowcount < 1:
+          print("Nothing was inserted. Please try again.")
+        else:
+          print(cursor.rowcount, "contact inserted.")
