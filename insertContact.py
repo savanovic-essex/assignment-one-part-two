@@ -13,11 +13,11 @@ def insert(connection, cursor):
         #SQL query for inserting a new entry into the database
         #%s is used as a placeholder 
         query = "INSERT INTO contacts (first_name, last_name, phone_number) VALUES (%s, %s, %s)"
-        #List of values enter by the user in the first part of the function
+        #List of values entered by the user in the first part of the function
         values = (first_name, last_name, phone_number)
         #By utilizing the "cursor" object, execute the SQL query with the entered values
         cursor.execute(query, values)
-        #The commit() method is used to confirm the changes made by the user to the database
+        #The commit() method is used to confirm the changes, made by the user, to the database
         connection.commit()
         #Check if the insertion was successful and inform the user of the outcome
         if cursor.rowcount < 1:

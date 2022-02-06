@@ -10,7 +10,7 @@ def search(cursor):
     else:
         #Execute SQL statement
         """
-        By utilizing the LIKE operator in the SQL statement, the user has to enter only one part of the name
+        By utilizing the LIKE operator in the SQL statement, the user has to enter only one part of the first name
         and the Phonebook app will return all contacts that match the entered string.
         """
         cursor.execute("SELECT * FROM contacts WHERE first_name LIKE '%" + first_name + "%'")
