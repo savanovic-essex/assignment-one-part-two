@@ -26,7 +26,7 @@ def main():
         if (choice == 2):
             search(cursor)
         if (choice == 3):
-            display(cursor)
+            sort(cursor)
         if (choice == 4):
             delete(connection, cursor)
 
